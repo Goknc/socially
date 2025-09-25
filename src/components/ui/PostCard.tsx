@@ -24,7 +24,7 @@ import { DeleteAlertDialog } from "./DeleteAlertDialog";
 import { Textarea } from "./textarea";
 
 type Posts = Awaited<ReturnType<typeof getPosts>>;
-type Post = Posts[number];
+type Post = NonNullable<Posts>[number];
 
 function PostCard({ post, dbUserId }: { post: Post; dbUserId: string | null }) {
   const { user } = useUser();
