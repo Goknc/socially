@@ -1,12 +1,12 @@
 import { getUserByClerkId } from "@/actions/user.action";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
-import { Button } from "./button";
-import { Card, CardContent, CardHeader, CardTitle } from "./card";
+import { LinkIcon, MapPinIcon } from "lucide-react";
 import Link from "next/link";
 import { Avatar, AvatarImage } from "./avatar";
+import { Button } from "./button";
+import { Card, CardContent, CardHeader, CardTitle } from "./card";
 import { Separator } from "./separator";
-import { LinkIcon, MapPinIcon } from "lucide-react";
 
 async function Sidebar() {
   const authUser = await currentUser();
@@ -43,12 +43,12 @@ async function Sidebar() {
               <div className="flex justify-between">
                 <div>
                   <p className="font-medium">{user._count.following}</p>
-                  <p className="text-xs text-muted-foreground">Following</p>
+                  <p className="text-xs text-muted-foreground">Followers</p>
                 </div>
                 <Separator orientation="vertical" />
                 <div>
                   <p className="font-medium">{user._count.followers}</p>
-                  <p className="text-xs text-muted-foreground">Followers</p>
+                  <p className="text-xs text-muted-foreground">Following</p>
                 </div>
               </div>
               <Separator className="my-4" />
